@@ -11,21 +11,21 @@ from ingestion.cleaning import build_text_for_embedding
 
 # --- Constants (khong hard-code so trong than ham) ---------------------------
 SEED = 42
-DROP_LATEST_N = 3
-BLANK_SUMMARY_FRACTION = 0.25
-NOISE_FRACTION = 0.20
-TRUNCATE_TITLE_FRACTION = 0.20
-TRUNCATE_TITLE_CHARS = 15
-STALE_FRACTION = 0.30
+DROP_LATEST_N = 6
+BLANK_SUMMARY_FRACTION = 0.35
+NOISE_FRACTION = 0.35
+TRUNCATE_TITLE_FRACTION = 0.40
+TRUNCATE_TITLE_CHARS = 10
+STALE_FRACTION = 0.40
 STALE_SHIFT_DAYS_RANGE = (500, 900)
-DUPLICATE_ROWS = 3
+DUPLICATE_ROWS = 4
 
 NOISE_TOKENS = [
     "lorem ipsum ###",
     "<jats:p>&&&</jats:p>",
     "AAAAAAAAAAAA",
     "??? ??? ???",
-    "[[ENCODING ERROR]] ���",
+    "[[ENCODING ERROR]] ",
 ]
 
 
@@ -131,22 +131,17 @@ def corrupt_clean_dataframe(df: pd.DataFrame, output_log_path) -> pd.DataFrame:
         )
     )
 
-    # Cac scenario 2-5 chon row disjoint tren phan con lai.
-    pool = pd.Index(work.index)
-    n_blank = _count_from_fraction(len(pool), BLANK_SUMMARY_FRACTION)
-    n_noise = _count_from_fraction(len(pool), NOISE_FRACTION)
-    n_trunc = _count_from_fraction(len(pool), TRUNCATE_TITLE_FRACTION)
-    n_stale = _count_from_fraction(len(pool), STALE_FRACTION)
+    # Compound corruptions: Cho phep chong lap giua cac kich ban de giam chat luong thuc te
+    full_idx = pd.Index(work.index)
+    n_blank = _count_from_fraction(len(full_idx), BLANK_SUMMARY_FRACTION)
+    n_noise = _count_from_fraction(len(full_idx), NOISE_FRACTION)
+    n_trunc = _count_from_fraction(len(full_idx), TRUNCATE_TITLE_FRACTION)
+    n_stale = _count_from_fraction(len(full_idx), STALE_FRACTION)
 
-    blank_idx = _pick(rng, pool, n_blank)
-    pool = pool.drop(blank_idx)
-    noise_idx = _pick(rng, pool, n_noise)
-    pool = pool.drop(noise_idx)
-    # Truncate title va stale date co the ap len row da bi blank/noise (doc lap cot),
-    # nen chon lai tren toan bo index hien tai.
-    trunc_idx = _pick(rng, pd.Index(work.index), n_trunc)
-    stale_pool = pd.Index(work.index)
-    stale_idx = _pick(rng, stale_pool, n_stale)
+    blank_idx = _pick(rng, full_idx, n_blank)
+    noise_idx = _pick(rng, full_idx, n_noise)
+    trunc_idx = _pick(rng, full_idx, n_trunc)
+    stale_idx = _pick(rng, full_idx, n_stale)
 
     # --- 2. Blank summary -----------------------------------------------------
     before = len(work)

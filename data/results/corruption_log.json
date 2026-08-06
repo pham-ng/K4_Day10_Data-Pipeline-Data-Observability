@@ -1,108 +1,119 @@
 {
-  "generated_at": "2026-08-06T08:59:19.127011+00:00",
+  "generated_at": "2026-08-06T13:04:36.812533+00:00",
   "seed": 42,
   "rows_before": 24,
-  "rows_after": 24,
+  "rows_after": 22,
   "config": {
-    "drop_latest_n": 3,
-    "blank_summary_fraction": 0.25,
-    "noise_fraction": 0.2,
-    "truncate_title_fraction": 0.2,
-    "truncate_title_chars": 15,
-    "stale_fraction": 0.3,
+    "drop_latest_n": 6,
+    "blank_summary_fraction": 0.35,
+    "noise_fraction": 0.35,
+    "truncate_title_fraction": 0.4,
+    "truncate_title_chars": 10,
+    "stale_fraction": 0.4,
     "stale_shift_days_range": [
       500,
       900
     ],
-    "duplicate_rows": 3
+    "duplicate_rows": 4
   },
   "steps": [
     {
       "step": "drop_latest",
-      "description": "Xoa 3 record moi nhat theo published desc.",
+      "description": "Xóa 6 bài báo mới nhất (sắp xếp theo ngày xuất bản giảm dần), mô phỏng việc mất dữ liệu ở lần đồng bộ gần nhất.",
       "affected_paper_ids": [
         "10.26634/javr.4.1.1115",
         "10.26634/javr.4.1.1116",
-        "10.26634/javr.4.1.11309"
+        "10.26634/javr.4.1.11309",
+        "10.26634/javr.4.1.1273",
+        "10.26634/javr.4.1.1477",
+        "10.33902/jpsp.202645655"
       ],
-      "affected_rows": 3,
+      "affected_rows": 6,
       "row_count_before": 24,
-      "row_count_after": 21
+      "row_count_after": 18
     },
     {
       "step": "blank_summary",
-      "description": "Xoa trang summary cua 5 row (~25%).",
+      "description": "Xóa trắng phần tóm tắt của 6 dòng (khoảng 35% dữ liệu), mô phỏng trường bị thiếu khi trích xuất.",
       "affected_paper_ids": [
-        "10.61838/jtpll.381",
-        "10.5267/j.ijdns.2026.24",
         "10.61838/jtesd.399",
-        "10.26634/javr.4.1.1477",
-        "10.61838/jafci.485"
+        "10.61838/jtpll.381",
+        "10.30656/1intech.v11i2.11359",
+        "10.21462/jeltl.v10i3.1648",
+        "10.61838/jhrlp.213",
+        "10.22158/eltls.v8n3p21"
       ],
-      "affected_rows": 5,
-      "row_count_before": 21,
-      "row_count_after": 21
+      "affected_rows": 6,
+      "row_count_before": 18,
+      "row_count_after": 18
     },
     {
       "step": "noise_summary",
-      "description": "Chen token rac vao summary cua 4 row (~20%).",
+      "description": "Chèn ký tự nhiễu và thẻ HTML sót lại vào phần tóm tắt của 6 dòng (khoảng 35% dữ liệu), mô phỏng lỗi làm sạch và lỗi mã hóa ký tự.",
       "affected_paper_ids": [
-        "10.33902/jpsp.202645655",
-        "10.61838/jhrlp.213",
-        "10.30656/1intech.v11i2.11359",
-        "10.7256/2453-8922.2027.1.81187"
+        "10.61838/kman.ijes.1520",
+        "10.61838/jtesd.399",
+        "10.21462/jeltl.v10i3.1648",
+        "10.61838/jtpll.381",
+        "10.7256/2453-8922.2027.1.81187",
+        "10.61838/kman.jrmde.372"
       ],
-      "affected_rows": 4,
-      "row_count_before": 21,
-      "row_count_after": 21
+      "affected_rows": 6,
+      "row_count_before": 18,
+      "row_count_after": 18
     },
     {
       "step": "truncate_title",
-      "description": "Cat title con 15 ky tu cho 4 row.",
+      "description": "Cắt tiêu đề còn 10 ký tự đầu ở 7 dòng, mô phỏng lỗi giới hạn độ dài cột khi ghi dữ liệu.",
       "affected_paper_ids": [
         "10.5559/di.di.34.4.01",
+        "10.7256/2453-8922.2027.1.81187",
         "10.61838/jafci.485",
-        "10.33902/jpsp.202645655",
-        "10.7256/2453-8922.2027.1.81187"
+        "10.26877/jipmat.v11i1.2279",
+        "10.61838/kman.jrmde.372",
+        "10.61838/jtpll.381",
+        "10.61838/jtesd.399"
       ],
-      "affected_rows": 4,
-      "row_count_before": 21,
-      "row_count_after": 21
+      "affected_rows": 7,
+      "row_count_before": 18,
+      "row_count_after": 18
     },
     {
       "step": "stale_published",
-      "description": "Lui published 500-900 ngay cho 6 row (~30%).",
+      "description": "Lùi ngày xuất bản về quá khứ 500–900 ngày ở 7 dòng (khoảng 40% dữ liệu), mô phỏng dữ liệu cũ không được cập nhật.",
       "affected_paper_ids": [
-        "10.7256/2453-8922.2027.1.81187",
-        "10.61838/jtpll.381",
-        "10.32738/jeppm-2025-345",
-        "10.61838/kman.ijes.1520",
         "10.5559/di.di.34.4.01",
-        "10.61838/jhrlp.268"
+        "10.26877/jipmat.v11i1.2279",
+        "10.61838/kman.ijes.1520",
+        "10.32738/jeppm-2025-345",
+        "10.64470/elene.2026.37",
+        "10.7256/2453-8922.2027.1.81187",
+        "10.61838/jtpll.381"
       ],
-      "affected_rows": 6,
-      "row_count_before": 21,
-      "row_count_after": 21
+      "affected_rows": 7,
+      "row_count_before": 18,
+      "row_count_after": 18
     },
     {
       "step": "duplicate_rows",
-      "description": "Nhan doi 3 row (giu nguyen paper_id -> duplicate id).",
+      "description": "Nhân đôi 4 dòng và giữ nguyên `paper_id`, mô phỏng lỗi nạp dữ liệu trùng lặp do chạy lại pipeline.",
       "affected_paper_ids": [
-        "10.61838/jhrlp.213",
-        "10.61838/jafci.485",
-        "10.11116/9789461667755"
+        "10.5267/j.ijdns.2026.24",
+        "10.61838/jhrlp.268",
+        "10.61838/jtpll.381",
+        "10.22158/eltls.v8n3p21"
       ],
-      "affected_rows": 3,
-      "row_count_before": 21,
-      "row_count_after": 24
+      "affected_rows": 4,
+      "row_count_before": 18,
+      "row_count_after": 22
     },
     {
       "step": "rebuild_derived_fields",
-      "description": "Tinh lai summary_chars, age_days va text_for_embedding tren toan bo dataframe.",
+      "description": "Tính lại các cột dẫn xuất `summary_chars`, `age_days` và `text_for_embedding` trên toàn bộ dữ liệu sau khi gây lỗi.",
       "affected_paper_ids": [],
       "affected_rows": 0,
-      "row_count_before": 24,
-      "row_count_after": 24
+      "row_count_before": 22,
+      "row_count_after": 22
     }
   ]
 }

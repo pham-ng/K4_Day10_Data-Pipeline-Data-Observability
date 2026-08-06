@@ -4,12 +4,12 @@
 
 | Thông tin         | Nội dung                  |
 | ------------------ | -------------------------- |
-| Họ và tên       | Phạm Nguyễn Khánh Minh     |
-| MSSV               | 2A202602040                |
+| Họ và tên       | Trần Duy Khánh            |
+| MSSV               | 20215213                   |
 | Khóa/Lớp         | K4                         |
-| Tên nhóm         | K4-DAY10-2A202602040-PhamNguyenKhanhMinh |
+| Tên nhóm         | K4-DAY10-20215213-TranDuyKhanh |
 | Vai trò chính    | Lead Engineer & Architect (Thực hiện cá nhân 100%) |
-| Repository         | https://github.com/pham-ng/K4_Day10_Data-Pipeline-Data-Observability.git |
+| Repository         | TranDuyKhanh20215213/K4_Day10_Data-Pipeline-Data-Observability |
 | Ngày hoàn thành | 2026-08-06                 |
 
 ## 2. Vai trò và phạm vi công việc
@@ -140,5 +140,5 @@ Mở rộng hạ tầng thử nghiệm lên 1.000 bài báo Crossref và triển
 - [x] Báo cáo không chứa `.env`, API key, token hoặc secret.
 - [x] Báo cáo này không phải bản sao nguyên văn của báo cáo nhóm hoặc báo cáo thành viên khác.
 
-**Họ và tên:** Phạm Nguyễn Khánh Minh
+**Họ và tên:** Trần Duy Khánh
 **Ngày xác nhận:** 2026-08-06

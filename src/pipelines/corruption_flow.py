@@ -98,6 +98,7 @@ def main() -> None:
     _log(4, "corrupting dataset ...")
     corrupted_df = corrupt_clean_dataframe(baseline_df, paths.corruption_log)
     write_csv(corrupted_df, paths.corrupted_clean_csv)
+    write_csv(corrupted_df, paths.clean_csv.parent / "papers_corrupted.csv")
     write_json(paths.corrupted_clean_json, corrupted_df.to_dict(orient="records"))
     _info(f"corrupted rows={len(corrupted_df)} -> {paths.corrupted_clean_csv}")
     _info(f"corruption log -> {paths.corruption_log}")

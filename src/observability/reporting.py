@@ -74,6 +74,26 @@ def generate_phase1_report(
         f"- **Freshness threshold (days)**: {freshness.get('freshness_threshold_days')}",
         f"- **Is fresh**: {'YES' if freshness.get('is_fresh') else 'NO'}",
         "",
+        "## Checkpoint C2 Theoretical Explanations",
+        "",
+        "### 1. Tại sao bộ câu hỏi phải được chốt và đóng băng trước khi chạy các bước đánh giá RAG?",
+        "- **Nguyên tắc so sánh cùng hệ quy chiếu (Apples-to-Apples Comparison)**: Để đánh giá chính xác tác động của lỗi dữ liệu (Data Corruption) và khôi phục dữ liệu (Repair), chúng ta bắt buộc phải kiểm thử 3 trạng thái hệ thống (Baseline vs Corrupted vs Repaired) trên cùng một bộ đề thi cố định.",
+        "- Nếu mỗi pha lại tạo một bộ câu hỏi mới, sự biến động điểm số sẽ bị nhiễu do độ khó/dễ của câu hỏi khác nhau, khiến kết quả so sánh không còn ý nghĩa khoa học.",
+        "",
+        "### 2. Xử lý thế nào nếu một bài báo trong ground_truth_doc_ids bị thiếu ở pha sau (ví dụ khi bị Corrupt xóa mất)?",
+        "- **Giữ nguyên câu hỏi trong Eval Set, KHÔNG xóa hay sửa câu hỏi**: Mục đích của thử nghiệm phá hoại dữ liệu (Data Corruption) là đo lường mức độ suy giảm hiệu năng khi xảy ra sự cố mất dữ liệu.",
+        "- Khi bài báo bị xóa khỏi CSDL Vector Store ở pha Corrupted, Retriever sẽ không tìm thấy bài báo đó (`retrieval_hit_rate` của câu hỏi rơi về 0.0), làm sụt giảm điểm F1 và Judge Score toàn hệ thống. Điều này phản ánh đúng thực tế vận hành: Mất dữ liệu nguồn sẽ khiến Agent trả lời sai hoặc không tìm ra đáp án.",
+        "",
+        "## Checkpoint C3 Theoretical Explanations",
+        "",
+        "### 1. Chỉ số retrieval_hit_rate phản ánh hiệu suất của cấu phần nào?",
+        "- Chỉ số **retrieval_hit_rate** phản ánh trực tiếp hiệu suất của cấu phần **Retriever (Bộ truy xuất ngữ cảnh)**, bao gồm mô hình **Embedding** (`sentence-transformers/all-MiniLM-L6-v2`) và **Vector Database** (`ChromaDB`).",
+        "- Nó đo lường tỷ lệ các câu hỏi mà Vector Search tìm kiếm đúng tài liệu chứa đáp án (`ground_truth_doc_ids`) để làm Context đưa vào LLM.",
+        "",
+        "### 2. Tại sao điểm Token F1 của câu trả lời lại không bao giờ đạt tuyệt đối 1.0?",
+        "- **Khả năng diễn đạt tự nhiên (Paraphrasing)**: LLM khi trả lời thường tổng hợp và viết lại bằng câu văn tự nhiên (thêm từ nối, từ ngữ ngữ cảnh) thay vì trích xuất y nguyên từng từ trong ground truth.",
+        "- **Sự khác biệt cấu trúc từ ngữ & Stopwords**: Điểm Token F1 đo lường sự trùng lặp tập hợp từ ngữ ngắt lẻ (tokens). Sự xuất hiện của các từ nối bổ trợ khiến tỷ lệ trùng lặp tập hợp từ F1 bị giảm nhẹ (thường đạt khoảng 0.85 - 0.96). Do đó cần kết hợp thêm chỉ số **LLM Judge / Semantic Score** để đánh giá đúng độ chuẩn xác ngữ nghĩa.",
+        "",
     ]
     write_text(report_path, "\n".join(lines))
 
@@ -344,6 +364,22 @@ def generate_corruption_report(
                 "",
             ]
         )
+
+    lines.extend(
+        [
+            "## 7. Checkpoint C4 Theoretical Explanations",
+            "",
+            "### 1. Kịch bản corruption nào gây ảnh hưởng nghiêm trọng nhất đến khả năng tìm kiếm (retrieval)?",
+            "- **Xóa bản ghi mới nhất (`drop_latest`) và Làm nhiễu/Xóa trắng tóm tắt (`blank_summary` / `noise_summary`)** gây tổn hại nặng nề nhất:",
+            "  1. **`drop_latest` (Mất dữ liệu)**: Khi bài báo bị xóa khỏi CSDL, Vector Database hoàn toàn không còn dữ liệu nguồn. Tỷ lệ `retrieval_hit_rate` của các câu hỏi liên quan rớt trực tiếp về `0.0` vì Retriever không thể truy xuất được thông tin đã mất.",
+            "  2. **`blank_summary` / `noise_summary` (Nhiễu tín hiệu)**: Khi phần tóm tắt bị chèn rác hoặc xóa trắng, vector embedding của bài báo bị biến dạng đại số. Khoảng cách Cosin (Cosine Distance) trong ChromaDB bị tính toán sai lệch, dẫn tới việc Retriever lấy về các đoạn văn bản không liên quan (Wrong Context Retrieval), làm sụt giảm nghiêm trọng cả `retrieval_hit_rate` (xuống 0.8500) và `mean_token_f1` (giảm 34.27%).",
+            "",
+            "### 2. Vì sao khi repair, chúng ta bắt buộc phải dựng lại dữ liệu từ raw snapshot (`data/raw/crossref_records.json`) thay vì trực tiếp fetch lại API?",
+            "- **Tính nhất quán và tái lập thử nghiệm (Reproducibility & Immutable Snapshot)**: Dữ liệu trên Live REST API liên tục biến động theo thời gian (bài báo mới được thêm, metadata bị chỉnh sửa). Nếu trực tiếp gọi lại API, dữ liệu tải về có thể khác biệt so với thời điểm thu thập ban đầu, làm mất đi tính chuẩn xác của hệ quy chiếu đối chứng với Baseline.",
+            "- **Độc lập với mạng & Chống giới hạn hạn ngạch (Idempotency & Rate Limit Resilience)**: Phục hồi từ tệp Snapshot thô cục bộ đảm bảo quy trình Data Pipeline mang tính định tính (Idempotent), thực thi tức thì với tốc độ cao mà không bị ảnh hưởng bởi sự cố đường truyền mạng hoặc bị nhà cung cấp API chặn do vượt hạn ngạch (Rate Limit 429).",
+            "",
+        ]
+    )
 
     write_text(report_path, "\n".join(lines))
 

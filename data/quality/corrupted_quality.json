@@ -1,13 +1,13 @@
 {
   "report_name": "corrupted",
-  "generated_at": "2026-08-06T09:01:01.066349+00:00",
-  "row_count": 24,
+  "generated_at": "2026-08-06T13:06:28.023280+00:00",
+  "row_count": 22,
   "checks": [
     {
       "name": "row_count",
       "success": true,
       "details": {
-        "row_count": 24
+        "row_count": 22
       }
     },
     {
@@ -15,7 +15,7 @@
       "success": false,
       "details": {
         "null_or_empty": 0,
-        "duplicates": 3
+        "duplicates": 4
       }
     },
     {
@@ -30,8 +30,8 @@
       "success": true,
       "details": {
         "min_chars_threshold": 20,
-        "short_rows": 7,
-        "short_fraction": 0.2917
+        "short_rows": 5,
+        "short_fraction": 0.2273
       }
     },
     {
@@ -39,8 +39,8 @@
       "success": true,
       "details": {
         "freshness_threshold_days": 180,
-        "stale_rows": 6,
-        "stale_fraction": 0.25,
+        "stale_rows": 8,
+        "stale_fraction": 0.3636,
         "missing_age_days": 0
       }
     }

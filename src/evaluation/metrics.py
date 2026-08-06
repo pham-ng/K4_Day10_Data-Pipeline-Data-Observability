@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from statistics import mean
 import os
 import sys
+import time
 import types
 from typing import Any
 
@@ -58,16 +59,29 @@ Return:
 - correct = true only when the answer is materially correct
 - short reasoning
 """.strip()
-    try:
-        llm = build_llm(settings=settings, temperature=0.0).with_structured_output(JudgeVerdict)
-        return llm.invoke(prompt)
-    except Exception:
-        score = 5 if _token_f1(reference, prediction) >= 0.95 else 3 if _token_f1(reference, prediction) >= 0.5 else 1
-        return JudgeVerdict(
-            score=score,
-            correct=score >= 3,
-            reasoning="Fallback heuristic judge used because the LLM evaluator was unavailable.",
-        )
+
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            llm = build_llm(settings=settings, temperature=0.0).with_structured_output(JudgeVerdict)
+            verdict = llm.invoke(prompt)
+            time.sleep(0.2)  # Fast pacing for OpenAI API
+            return verdict
+        except Exception as e:
+            err_str = str(e)
+            if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
+                wait_seconds = 12 * (attempt + 1)
+                print(f"   [eval] Rate limit hit (429), waiting {wait_seconds}s before retry (attempt {attempt + 1}/{max_retries})...", flush=True)
+                time.sleep(wait_seconds)
+                continue
+            break
+
+    score = 5 if _token_f1(reference, prediction) >= 0.95 else 3 if _token_f1(reference, prediction) >= 0.5 else 1
+    return JudgeVerdict(
+        score=score,
+        correct=score >= 3,
+        reasoning="Fallback heuristic judge used because the LLM evaluator was unavailable.",
+    )
 
 
 def _run_ragas(settings: Settings, answers: list[dict[str, Any]]) -> dict[str, Any]:
@@ -79,6 +93,7 @@ def _run_ragas(settings: Settings, answers: list[dict[str, Any]]) -> dict[str, A
             shim = types.ModuleType("langchain_community.chat_models.vertexai")
             shim.ChatVertexAI = type("ChatVertexAI", (), {})
             sys.modules["langchain_community.chat_models.vertexai"] = shim
+        from langchain_openai import OpenAIEmbeddings
         from ragas import evaluate
         from ragas.metrics import answer_relevancy, context_precision, context_recall, faithfulness
 
@@ -90,11 +105,17 @@ def _run_ragas(settings: Settings, answers: list[dict[str, Any]]) -> dict[str, A
                 "contexts": [item["retrieved_contexts"] for item in answers],
             }
         )
+
+        embeddings = (
+            OpenAIEmbeddings(api_key=settings.openai_api_key)
+            if settings.llm_provider == "openai" and settings.openai_api_key
+            else MiniLMEmbeddings(settings.embedding_model)
+        )
         result = evaluate(
             dataset,
             metrics=[answer_relevancy, context_precision, context_recall, faithfulness],
             llm=build_llm(settings=settings, temperature=0.0),
-            embeddings=MiniLMEmbeddings(settings.embedding_model),
+            embeddings=embeddings,
         )
         return dict(result)
     except Exception as exc:  # pragma: no cover
