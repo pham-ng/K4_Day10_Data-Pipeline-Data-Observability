@@ -1,0 +1,542 @@
+[
+  {
+    "id": "q-0001",
+    "question_type": "summary",
+    "question": "What is the paper 'AI-Enabled Force and Torque Control for Human Robot Interaction' about?",
+    "ground_truth": "<jats:p>Safe and intuitive human robot interaction (HRI) requires precise regulation of contact forces and torques while adapting to dynamic and uncertain human behavior.",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.1115"
+    ]
+  },
+  {
+    "id": "q-0002",
+    "question_type": "authors",
+    "question": "Who authored 'AI-Enabled Force and Torque Control for Human Robot Interaction'?",
+    "ground_truth": "Vishal Khanna",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.1115"
+    ]
+  },
+  {
+    "id": "q-0003",
+    "question_type": "date",
+    "question": "When was 'AI-Enabled Force and Torque Control for Human Robot Interaction' published?",
+    "ground_truth": "2028-06-15",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.1115"
+    ]
+  },
+  {
+    "id": "q-0004",
+    "question_type": "summary",
+    "question": "What is the paper 'Edge AI in Wearable Devices' about?",
+    "ground_truth": "<jats:p>Wearable technologies have progressed from basic fitness trackers and digital watches into smart systems that can check vital signs, alert for anomalies, and transmit personalized health data.",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.1116"
+    ]
+  },
+  {
+    "id": "q-0005",
+    "question_type": "authors",
+    "question": "Who authored 'Edge AI in Wearable Devices'?",
+    "ground_truth": "Prof.Anu Jyothy",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.1116"
+    ]
+  },
+  {
+    "id": "q-0006",
+    "question_type": "date",
+    "question": "When was 'Edge AI in Wearable Devices' published?",
+    "ground_truth": "2028-06-15",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.1116"
+    ]
+  },
+  {
+    "id": "q-0007",
+    "question_type": "summary",
+    "question": "What is the paper 'ICARECS-2026 - VR NEURAL CLASSROOM' about?",
+    "ground_truth": "<jats:p>Abstract: The combination of artificial intelligence, natural language processing, and virtual reality is reshaping the educational environment by providing immersive and personalized learning experiences.",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.11309"
+    ]
+  },
+  {
+    "id": "q-0008",
+    "question_type": "authors",
+    "question": "Who authored 'ICARECS-2026 - VR NEURAL CLASSROOM'?",
+    "ground_truth": "Dr.I karthiga",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.11309"
+    ]
+  },
+  {
+    "id": "q-0009",
+    "question_type": "date",
+    "question": "When was 'ICARECS-2026 - VR NEURAL CLASSROOM' published?",
+    "ground_truth": "2028-06-15",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.11309"
+    ]
+  },
+  {
+    "id": "q-0010",
+    "question_type": "summary",
+    "question": "What is the paper 'The Rise of Augmented Reality in Teacher Education: a Bibliometric Analysis of Research' about?",
+    "ground_truth": "<jats:p>In the digital era, immersive learning media is increasingly popular in the educational sphere.",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.1273"
+    ]
+  },
+  {
+    "id": "q-0011",
+    "question_type": "authors",
+    "question": "Who authored 'The Rise of Augmented Reality in Teacher Education: a Bibliometric Analysis of Research'?",
+    "ground_truth": "Swaraj Naik",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.1273"
+    ]
+  },
+  {
+    "id": "q-0012",
+    "question_type": "date",
+    "question": "When was 'The Rise of Augmented Reality in Teacher Education: a Bibliometric Analysis of Research' published?",
+    "ground_truth": "2028-06-15",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.1273"
+    ]
+  },
+  {
+    "id": "q-0013",
+    "question_type": "summary",
+    "question": "What is the paper 'Mind Reader Robot: an Arduino-Based Game' about?",
+    "ground_truth": "<jats:p>This paper presents the design and implementation of the Mind Reader Robot, an interactive Arduino-based game developed to make binary number concepts fun and engaging.",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.1477"
+    ]
+  },
+  {
+    "id": "q-0014",
+    "question_type": "authors",
+    "question": "Who authored 'Mind Reader Robot: an Arduino-Based Game'?",
+    "ground_truth": "sritmkiran",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.1477"
+    ]
+  },
+  {
+    "id": "q-0015",
+    "question_type": "date",
+    "question": "When was 'Mind Reader Robot: an Arduino-Based Game' published?",
+    "ground_truth": "2028-06-15",
+    "ground_truth_doc_ids": [
+      "10.26634/javr.4.1.1477"
+    ]
+  },
+  {
+    "id": "q-0016",
+    "question_type": "summary",
+    "question": "What is the paper 'Fostering Indonesian language teachers assessment practices: The mediating role of emotional engagement in relationship mindfulness and psychological capital' about?",
+    "ground_truth": "<jats:p xml:lang=\"tr\"/>",
+    "ground_truth_doc_ids": [
+      "10.33902/jpsp.202645655"
+    ]
+  },
+  {
+    "id": "q-0017",
+    "question_type": "authors",
+    "question": "Who authored 'Fostering Indonesian language teachers assessment practices: The mediating role of emotional engagement in relationship mindfulness and psychological capital'?",
+    "ground_truth": "Desi Sukenti, Syahraini Tambak, Rika Ningsih",
+    "ground_truth_doc_ids": [
+      "10.33902/jpsp.202645655"
+    ]
+  },
+  {
+    "id": "q-0018",
+    "question_type": "date",
+    "question": "When was 'Fostering Indonesian language teachers assessment practices: The mediating role of emotional engagement in relationship mindfulness and psychological capital' published?",
+    "ground_truth": "2027-07-22",
+    "ground_truth_doc_ids": [
+      "10.33902/jpsp.202645655"
+    ]
+  },
+  {
+    "id": "q-0019",
+    "question_type": "summary",
+    "question": "What is the paper 'Feasibility Analysis of Hybrid Green Power Generation System for Healthcare Institutions' about?",
+    "ground_truth": "<jats:p xml:lang=\"tr\"/>",
+    "ground_truth_doc_ids": [
+      "10.64470/elene.2026.37"
+    ]
+  },
+  {
+    "id": "q-0020",
+    "question_type": "authors",
+    "question": "Who authored 'Feasibility Analysis of Hybrid Green Power Generation System for Healthcare Institutions'?",
+    "ground_truth": "Paul Kusi",
+    "ground_truth_doc_ids": [
+      "10.64470/elene.2026.37"
+    ]
+  },
+  {
+    "id": "q-0021",
+    "question_type": "date",
+    "question": "When was 'Feasibility Analysis of Hybrid Green Power Generation System for Healthcare Institutions' published?",
+    "ground_truth": "2027-07-22",
+    "ground_truth_doc_ids": [
+      "10.64470/elene.2026.37"
+    ]
+  },
+  {
+    "id": "q-0022",
+    "question_type": "summary",
+    "question": "What is the paper 'A Multimodal Discourse Analysis of Interpersonal Meaning in New-Type Farmers' Agricultural Promotion Short Videos on Douyin' about?",
+    "ground_truth": "<jats:p>This study selects 15 short videos published over the past year by new-type farmers (xin nong ren) on Douyin as research corpus.",
+    "ground_truth_doc_ids": [
+      "10.22158/eltls.v8n3p21"
+    ]
+  },
+  {
+    "id": "q-0023",
+    "question_type": "authors",
+    "question": "Who authored 'A Multimodal Discourse Analysis of Interpersonal Meaning in New-Type Farmers' Agricultural Promotion Short Videos on Douyin'?",
+    "ground_truth": "Yixin Chen",
+    "ground_truth_doc_ids": [
+      "10.22158/eltls.v8n3p21"
+    ]
+  },
+  {
+    "id": "q-0024",
+    "question_type": "date",
+    "question": "When was 'A Multimodal Discourse Analysis of Interpersonal Meaning in New-Type Farmers' Agricultural Promotion Short Videos on Douyin' published?",
+    "ground_truth": "2027-05-07",
+    "ground_truth_doc_ids": [
+      "10.22158/eltls.v8n3p21"
+    ]
+  },
+  {
+    "id": "q-0025",
+    "question_type": "summary",
+    "question": "What is the paper 'PENGARUH MODEL PEMBELAJARAN PROBLEM BASED LEARNING BERBANTUAN MEDIA GASINGKAR TERHADAP PEMAHAMAN KONSEP GARIS SINGGUNG LINGKARAN SISWA KELAS XI SMA PGRI 2 KAYEN' about?",
+    "ground_truth": "<jats:p>Pemahaman siswa terhadap ide-ide dasar adalah hasil yang diharapkan dari penyelidikan ini tentang kemanjuran paradigma instruksional Pembelajaran Berbasis Masalah (PBL) dengan penggunaan alat pedagogis.",
+    "ground_truth_doc_ids": [
+      "10.26877/jipmat.v11i1.2279"
+    ]
+  },
+  {
+    "id": "q-0026",
+    "question_type": "authors",
+    "question": "Who authored 'PENGARUH MODEL PEMBELAJARAN PROBLEM BASED LEARNING BERBANTUAN MEDIA GASINGKAR TERHADAP PEMAHAMAN KONSEP GARIS SINGGUNG LINGKARAN SISWA KELAS XI SMA PGRI 2 KAYEN'?",
+    "ground_truth": "Cikal Wulandari Kristi, Widya Kusumaningsih, Rizky Esti Utami",
+    "ground_truth_doc_ids": [
+      "10.26877/jipmat.v11i1.2279"
+    ]
+  },
+  {
+    "id": "q-0027",
+    "question_type": "date",
+    "question": "When was 'PENGARUH MODEL PEMBELAJARAN PROBLEM BASED LEARNING BERBANTUAN MEDIA GASINGKAR TERHADAP PEMAHAMAN KONSEP GARIS SINGGUNG LINGKARAN SISWA KELAS XI SMA PGRI 2 KAYEN' published?",
+    "ground_truth": "2027-04-27",
+    "ground_truth_doc_ids": [
+      "10.26877/jipmat.v11i1.2279"
+    ]
+  },
+  {
+    "id": "q-0028",
+    "question_type": "summary",
+    "question": "What is the paper 'The Kalashnikov Generation' about?",
+    "ground_truth": "<jats:p>Written in a vivid, direct style, The Kalashnikov Generation takes us into the heart of the Democratic Republic of the Congo, amid the hills and forests of Kivu and Ituri, where thousands of young people and children fight with Kalashnikovs in the many militias and armies that have fueled a war of staggering complexity and brutality for three decades.",
+    "ground_truth_doc_ids": [
+      "10.11116/9789461667755"
+    ]
+  },
+  {
+    "id": "q-0029",
+    "question_type": "authors",
+    "question": "Who authored 'The Kalashnikov Generation'?",
+    "ground_truth": "Luca Jourdan",
+    "ground_truth_doc_ids": [
+      "10.11116/9789461667755"
+    ]
+  },
+  {
+    "id": "q-0030",
+    "question_type": "date",
+    "question": "When was 'The Kalashnikov Generation' published?",
+    "ground_truth": "2027-03-01",
+    "ground_truth_doc_ids": [
+      "10.11116/9789461667755"
+    ]
+  },
+  {
+    "id": "q-0031",
+    "question_type": "summary",
+    "question": "What is the paper 'Knowledge-Enhanced Semantic Reasoning Model for Implicit Sentiment Recognition' about?",
+    "ground_truth": "<jats:p>Existing methods for implicit sentiment identification in think tank documents face limitations in deep semantic understanding, including insufficient integration of domain knowledge and difficulty in modeling sentiment evolution in long texts.",
+    "ground_truth_doc_ids": [
+      "10.32738/jeppm-2025-345"
+    ]
+  },
+  {
+    "id": "q-0032",
+    "question_type": "authors",
+    "question": "Who authored 'Knowledge-Enhanced Semantic Reasoning Model for Implicit Sentiment Recognition'?",
+    "ground_truth": "Yuhui Sun, Feng Tian",
+    "ground_truth_doc_ids": [
+      "10.32738/jeppm-2025-345"
+    ]
+  },
+  {
+    "id": "q-0033",
+    "question_type": "date",
+    "question": "When was 'Knowledge-Enhanced Semantic Reasoning Model for Implicit Sentiment Recognition' published?",
+    "ground_truth": "2027-01-01",
+    "ground_truth_doc_ids": [
+      "10.32738/jeppm-2025-345"
+    ]
+  },
+  {
+    "id": "q-0034",
+    "question_type": "summary",
+    "question": "What is the paper 'A scientometric study of retrieval-augmented generation research: Mapping the intellectual landscape of a transformative AI paradigm' about?",
+    "ground_truth": "<jats:p>This scientometric study provides a comprehensive analysis of the intellectual landscape surrounding Retrieval-Augmented Generation (RAG), a transformative paradigm that addresses fundamental limitations of Large Language Models by grounding generative outputs in external knowledge sources.",
+    "ground_truth_doc_ids": [
+      "10.5267/j.ijdns.2026.24"
+    ]
+  },
+  {
+    "id": "q-0035",
+    "question_type": "authors",
+    "question": "Who authored 'A scientometric study of retrieval-augmented generation research: Mapping the intellectual landscape of a transformative AI paradigm'?",
+    "ground_truth": "Mahdi Shirdeli, Ali Shirdeli, Shahpour Alirezaee",
+    "ground_truth_doc_ids": [
+      "10.5267/j.ijdns.2026.24"
+    ]
+  },
+  {
+    "id": "q-0036",
+    "question_type": "date",
+    "question": "When was 'A scientometric study of retrieval-augmented generation research: Mapping the intellectual landscape of a transformative AI paradigm' published?",
+    "ground_truth": "2027-01-01",
+    "ground_truth_doc_ids": [
+      "10.5267/j.ijdns.2026.24"
+    ]
+  },
+  {
+    "id": "q-0037",
+    "question_type": "summary",
+    "question": "What is the paper 'Design and Evaluation of a Hybrid Natural Language Processing and Machine Learning Model for Economic News Sentiment Analysis to Predict Price Fluctuations in the Iran Mercantile Exchange' about?",
+    "ground_truth": "<jats:p>This study aimed to design and evaluate a hybrid Persian natural language processing and machine learning model for extracting economic news sentiment and predicting steel price fluctuations in the Iran Mercantile Exchange.",
+    "ground_truth_doc_ids": [
+      "10.61838/jafci.485"
+    ]
+  },
+  {
+    "id": "q-0038",
+    "question_type": "authors",
+    "question": "Who authored 'Design and Evaluation of a Hybrid Natural Language Processing and Machine Learning Model for Economic News Sentiment Analysis to Predict Price Fluctuations in the Iran Mercantile Exchange'?",
+    "ground_truth": "Amin Jamali, Hamid Reza Jamali",
+    "ground_truth_doc_ids": [
+      "10.61838/jafci.485"
+    ]
+  },
+  {
+    "id": "q-0039",
+    "question_type": "date",
+    "question": "When was 'Design and Evaluation of a Hybrid Natural Language Processing and Machine Learning Model for Economic News Sentiment Analysis to Predict Price Fluctuations in the Iran Mercantile Exchange' published?",
+    "ground_truth": "2027-01-01",
+    "ground_truth_doc_ids": [
+      "10.61838/jafci.485"
+    ]
+  },
+  {
+    "id": "q-0040",
+    "question_type": "summary",
+    "question": "What is the paper 'A Three-Dimensional Analysis of the Role of Popular Resistance in Strengthening National Sovereignty in Light of Imami Jurisprudence and the International Legal Order: Proposing a Novel Conceptual Model' about?",
+    "ground_truth": "<jats:p>This study aims to provide a three-dimensional analysis of the role of popular resistance in strengthening national sovereignty, with a focus on Imami jurisprudence, the domestic legal system of the Islamic Republic of Iran, and international law.",
+    "ground_truth_doc_ids": [
+      "10.61838/jhrlp.213"
+    ]
+  },
+  {
+    "id": "q-0041",
+    "question_type": "authors",
+    "question": "Who authored 'A Three-Dimensional Analysis of the Role of Popular Resistance in Strengthening National Sovereignty in Light of Imami Jurisprudence and the International Legal Order: Proposing a Novel Conceptual Model'?",
+    "ground_truth": "Zeanab Musavisadat, Zahra Montazeri, Sara Rostami",
+    "ground_truth_doc_ids": [
+      "10.61838/jhrlp.213"
+    ]
+  },
+  {
+    "id": "q-0042",
+    "question_type": "date",
+    "question": "When was 'A Three-Dimensional Analysis of the Role of Popular Resistance in Strengthening National Sovereignty in Light of Imami Jurisprudence and the International Legal Order: Proposing a Novel Conceptual Model' published?",
+    "ground_truth": "2027-01-01",
+    "ground_truth_doc_ids": [
+      "10.61838/jhrlp.213"
+    ]
+  },
+  {
+    "id": "q-0043",
+    "question_type": "summary",
+    "question": "What is the paper 'The Effects of Domestic Policies of Governments Before and After the Revolution in Alignment with the Command Economy Model' about?",
+    "ground_truth": "<jats:p>This article examines the historical trajectory of state intervention in Iran\u2019s economy from the Qajar period to the post-Islamic Revolution era within the framework of the command economy model and political economy analysis.",
+    "ground_truth_doc_ids": [
+      "10.61838/jhrlp.268"
+    ]
+  },
+  {
+    "id": "q-0044",
+    "question_type": "authors",
+    "question": "Who authored 'The Effects of Domestic Policies of Governments Before and After the Revolution in Alignment with the Command Economy Model'?",
+    "ground_truth": "Shahram Mohammadi, Hasan Eivazzadeh, Malek Zolghadr",
+    "ground_truth_doc_ids": [
+      "10.61838/jhrlp.268"
+    ]
+  },
+  {
+    "id": "q-0045",
+    "question_type": "date",
+    "question": "When was 'The Effects of Domestic Policies of Governments Before and After the Revolution in Alignment with the Command Economy Model' published?",
+    "ground_truth": "2027-01-01",
+    "ground_truth_doc_ids": [
+      "10.61838/jhrlp.268"
+    ]
+  },
+  {
+    "id": "q-0046",
+    "question_type": "summary",
+    "question": "What is the paper 'Designing a Vocational Education Management Model in the Marginalized Areas of Tehran' about?",
+    "ground_truth": "<jats:p>The present study aimed to design a vocational education management model for the marginalized areas of Tehran by identifying its causal conditions, contextual factors, intervening conditions, strategies, and consequences.",
+    "ground_truth_doc_ids": [
+      "10.61838/jtesd.399"
+    ]
+  },
+  {
+    "id": "q-0047",
+    "question_type": "authors",
+    "question": "Who authored 'Designing a Vocational Education Management Model in the Marginalized Areas of Tehran'?",
+    "ground_truth": "Fatemeh Rafiefar, Fereshteh Kordestani, Yalda Delgoshaei, Baharak Shirzadkebria",
+    "ground_truth_doc_ids": [
+      "10.61838/jtesd.399"
+    ]
+  },
+  {
+    "id": "q-0048",
+    "question_type": "date",
+    "question": "When was 'Designing a Vocational Education Management Model in the Marginalized Areas of Tehran' published?",
+    "ground_truth": "2027-01-01",
+    "ground_truth_doc_ids": [
+      "10.61838/jtesd.399"
+    ]
+  },
+  {
+    "id": "q-0049",
+    "question_type": "summary",
+    "question": "What is the paper 'Examining the Contexts of Personal Writing with Emphasis on the Two Collections Roozha and Roozha dar Rah' about?",
+    "ground_truth": "<jats:p>Anything that a writer produces concerning their interests, beliefs, experiences, emotions, and the ups and downs of their life in various forms can be classified under the broad concept of personal writing.",
+    "ground_truth_doc_ids": [
+      "10.61838/jtpll.381"
+    ]
+  },
+  {
+    "id": "q-0050",
+    "question_type": "authors",
+    "question": "Who authored 'Examining the Contexts of Personal Writing with Emphasis on the Two Collections Roozha and Roozha dar Rah'?",
+    "ground_truth": "Akbar Shayanseresht, Negarsadat Masoumzadeh, Seyyed Mehdi Rahimi",
+    "ground_truth_doc_ids": [
+      "10.61838/jtpll.381"
+    ]
+  },
+  {
+    "id": "q-0051",
+    "question_type": "date",
+    "question": "When was 'Examining the Contexts of Personal Writing with Emphasis on the Two Collections Roozha and Roozha dar Rah' published?",
+    "ground_truth": "2027-01-01",
+    "ground_truth_doc_ids": [
+      "10.61838/jtpll.381"
+    ]
+  },
+  {
+    "id": "q-0052",
+    "question_type": "summary",
+    "question": "What is the paper 'Validation of a Model for Improving the Quality of Islamic Education Courses in Iraqi Universities' about?",
+    "ground_truth": "<jats:p>Purpose: The present study aimed to validate a multidimensional model for improving the quality of Islamic education courses in Iraqi universities.",
+    "ground_truth_doc_ids": [
+      "10.61838/kman.ijes.1520"
+    ]
+  },
+  {
+    "id": "q-0053",
+    "question_type": "authors",
+    "question": "Who authored 'Validation of a Model for Improving the Quality of Islamic Education Courses in Iraqi Universities'?",
+    "ground_truth": "Ghalib Mhmood Mhawes, Narges Saeidian Khorasgani, Falah Salih Hussein, Badri Shahtalebi",
+    "ground_truth_doc_ids": [
+      "10.61838/kman.ijes.1520"
+    ]
+  },
+  {
+    "id": "q-0054",
+    "question_type": "date",
+    "question": "When was 'Validation of a Model for Improving the Quality of Islamic Education Courses in Iraqi Universities' published?",
+    "ground_truth": "2027-01-01",
+    "ground_truth_doc_ids": [
+      "10.61838/kman.ijes.1520"
+    ]
+  },
+  {
+    "id": "q-0055",
+    "question_type": "summary",
+    "question": "What is the paper 'Designing a Crowdfunding Investment Marketing Model for Enhancing Sustainable Urban Revenues: A Case Study of Tehran Municipality' about?",
+    "ground_truth": "<jats:p>This study aimed to design and validate a crowdfunding investment marketing model for enhancing sustainable urban revenues in Tehran Municipality, with emphasis on the role of innovation drivers.",
+    "ground_truth_doc_ids": [
+      "10.61838/kman.jrmde.372"
+    ]
+  },
+  {
+    "id": "q-0056",
+    "question_type": "authors",
+    "question": "Who authored 'Designing a Crowdfunding Investment Marketing Model for Enhancing Sustainable Urban Revenues: A Case Study of Tehran Municipality'?",
+    "ground_truth": "Abolghasem Yousef Soltanieh, Mahmoud Ahmadi Sharif, Arezo Ahmadi Danyali, Nader Gharibnavaz",
+    "ground_truth_doc_ids": [
+      "10.61838/kman.jrmde.372"
+    ]
+  },
+  {
+    "id": "q-0057",
+    "question_type": "date",
+    "question": "When was 'Designing a Crowdfunding Investment Marketing Model for Enhancing Sustainable Urban Revenues: A Case Study of Tehran Municipality' published?",
+    "ground_truth": "2027-01-01",
+    "ground_truth_doc_ids": [
+      "10.61838/kman.jrmde.372"
+    ]
+  },
+  {
+    "id": "q-0058",
+    "question_type": "summary",
+    "question": "What is the paper 'Chronological analysis of &amp;#948;18O data from the NGRIP ice core (Greenland), characteristics of solar climate, and large-scale climatic events in the Northern Hemisphere during the Holocene' about?",
+    "ground_truth": "<jats:p>Data from the isotopic oxygen composition of Greenland ice cores form one of the foundations of isotopic geochronology and climate stratigraphy of the Neopleistocene and Holocene (Petite et al., 1999; Rasmussen et al., 2008, 2014; Cheng et al., 2019).",
+    "ground_truth_doc_ids": [
+      "10.7256/2453-8922.2027.1.81187"
+    ]
+  },
+  {
+    "id": "q-0059",
+    "question_type": "authors",
+    "question": "Who authored 'Chronological analysis of &amp;#948;18O data from the NGRIP ice core (Greenland), characteristics of solar climate, and large-scale climatic events in the Northern Hemisphere during the Holocene'?",
+    "ground_truth": "Valerii Mikhailovich Fedorov, Denis Maksimovich Frolov, Alim Mikhailovich Zalikhanov",
+    "ground_truth_doc_ids": [
+      "10.7256/2453-8922.2027.1.81187"
+    ]
+  },
+  {
+    "id": "q-0060",
+    "question_type": "date",
+    "question": "When was 'Chronological analysis of &amp;#948;18O data from the NGRIP ice core (Greenland), characteristics of solar climate, and large-scale climatic events in the Northern Hemisphere during the Holocene' published?",
+    "ground_truth": "2027-01-01",
+    "ground_truth_doc_ids": [
+      "10.7256/2453-8922.2027.1.81187"
+    ]
+  }
+]

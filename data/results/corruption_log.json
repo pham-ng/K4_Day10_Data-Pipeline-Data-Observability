@@ -1,0 +1,108 @@
+{
+  "generated_at": "2026-08-06T08:59:19.127011+00:00",
+  "seed": 42,
+  "rows_before": 24,
+  "rows_after": 24,
+  "config": {
+    "drop_latest_n": 3,
+    "blank_summary_fraction": 0.25,
+    "noise_fraction": 0.2,
+    "truncate_title_fraction": 0.2,
+    "truncate_title_chars": 15,
+    "stale_fraction": 0.3,
+    "stale_shift_days_range": [
+      500,
+      900
+    ],
+    "duplicate_rows": 3
+  },
+  "steps": [
+    {
+      "step": "drop_latest",
+      "description": "Xoa 3 record moi nhat theo published desc.",
+      "affected_paper_ids": [
+        "10.26634/javr.4.1.1115",
+        "10.26634/javr.4.1.1116",
+        "10.26634/javr.4.1.11309"
+      ],
+      "affected_rows": 3,
+      "row_count_before": 24,
+      "row_count_after": 21
+    },
+    {
+      "step": "blank_summary",
+      "description": "Xoa trang summary cua 5 row (~25%).",
+      "affected_paper_ids": [
+        "10.61838/jtpll.381",
+        "10.5267/j.ijdns.2026.24",
+        "10.61838/jtesd.399",
+        "10.26634/javr.4.1.1477",
+        "10.61838/jafci.485"
+      ],
+      "affected_rows": 5,
+      "row_count_before": 21,
+      "row_count_after": 21
+    },
+    {
+      "step": "noise_summary",
+      "description": "Chen token rac vao summary cua 4 row (~20%).",
+      "affected_paper_ids": [
+        "10.33902/jpsp.202645655",
+        "10.61838/jhrlp.213",
+        "10.30656/1intech.v11i2.11359",
+        "10.7256/2453-8922.2027.1.81187"
+      ],
+      "affected_rows": 4,
+      "row_count_before": 21,
+      "row_count_after": 21
+    },
+    {
+      "step": "truncate_title",
+      "description": "Cat title con 15 ky tu cho 4 row.",
+      "affected_paper_ids": [
+        "10.5559/di.di.34.4.01",
+        "10.61838/jafci.485",
+        "10.33902/jpsp.202645655",
+        "10.7256/2453-8922.2027.1.81187"
+      ],
+      "affected_rows": 4,
+      "row_count_before": 21,
+      "row_count_after": 21
+    },
+    {
+      "step": "stale_published",
+      "description": "Lui published 500-900 ngay cho 6 row (~30%).",
+      "affected_paper_ids": [
+        "10.7256/2453-8922.2027.1.81187",
+        "10.61838/jtpll.381",
+        "10.32738/jeppm-2025-345",
+        "10.61838/kman.ijes.1520",
+        "10.5559/di.di.34.4.01",
+        "10.61838/jhrlp.268"
+      ],
+      "affected_rows": 6,
+      "row_count_before": 21,
+      "row_count_after": 21
+    },
+    {
+      "step": "duplicate_rows",
+      "description": "Nhan doi 3 row (giu nguyen paper_id -> duplicate id).",
+      "affected_paper_ids": [
+        "10.61838/jhrlp.213",
+        "10.61838/jafci.485",
+        "10.11116/9789461667755"
+      ],
+      "affected_rows": 3,
+      "row_count_before": 21,
+      "row_count_after": 24
+    },
+    {
+      "step": "rebuild_derived_fields",
+      "description": "Tinh lai summary_chars, age_days va text_for_embedding tren toan bo dataframe.",
+      "affected_paper_ids": [],
+      "affected_rows": 0,
+      "row_count_before": 24,
+      "row_count_after": 24
+    }
+  ]
+}

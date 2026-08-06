@@ -73,6 +73,7 @@ Return:
 def _run_ragas(settings: Settings, answers: list[dict[str, Any]]) -> dict[str, Any]:
     if os.getenv("RUN_RAGAS", "").lower() not in {"1", "true", "yes"}:
         return {"skipped": "Set RUN_RAGAS=1 to enable the slower Ragas pass."}
+    print("[eval]   running ragas metrics (co the mat vai phut) ...", flush=True)
     try:
         if "langchain_community.chat_models.vertexai" not in sys.modules:
             shim = types.ModuleType("langchain_community.chat_models.vertexai")
@@ -109,8 +110,10 @@ def evaluate_pipeline(
 ) -> EvaluationBundle:
     test_set = read_json(test_set_path)
     answers: list[dict[str, Any]] = []
+    total = len(test_set)
 
-    for item in test_set:
+    for position, item in enumerate(test_set, start=1):
+        print(f"[eval]   {position}/{total} id={item['id']} type={item['question_type']} ...", flush=True)
         result = answer_question(item["question"], settings=settings, index=index)
         judge = _judge_answer(settings, item["question"], item["ground_truth"], result.answer)
         retrieval_hit = any(doc_id in item["ground_truth_doc_ids"] for doc_id in result.retrieved_doc_ids)

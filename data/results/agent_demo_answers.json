@@ -1,0 +1,50 @@
+[
+  {
+    "question": "What is the paper 'AI-Enabled Force and Torque Control for Human Robot Interaction' about?",
+    "answer": "Safe and intuitive human robot interaction (HRI) requires precise regulation of contact forces and torques while adapting to dynamic and uncertain human behavior.",
+    "retrieved_doc_ids": [
+      "10.26634/javr.4.1.1115",
+      "10.26634/javr.4.1.1477",
+      "10.26634/javr.4.1.11309",
+      "10.5267/j.ijdns.2026.24"
+    ],
+    "retrieved_titles": [
+      "AI-Enabled Force and Torque Control for Human Robot Interaction",
+      "Mind Reader Robot: an Arduino-Based Game",
+      "ICARECS-2026 - VR NEURAL CLASSROOM",
+      "A scientometric study of retrieval-augmented generation research: Mapping the intellectual landscape of a transformative AI paradigm"
+    ]
+  },
+  {
+    "question": "Who authored 'AI-Enabled Force and Torque Control for Human Robot Interaction'?",
+    "answer": "Vishal Khanna",
+    "retrieved_doc_ids": [
+      "10.26634/javr.4.1.1115",
+      "10.26634/javr.4.1.1477",
+      "10.26634/javr.4.1.11309",
+      "10.5267/j.ijdns.2026.24"
+    ],
+    "retrieved_titles": [
+      "AI-Enabled Force and Torque Control for Human Robot Interaction",
+      "Mind Reader Robot: an Arduino-Based Game",
+      "ICARECS-2026 - VR NEURAL CLASSROOM",
+      "A scientometric study of retrieval-augmented generation research: Mapping the intellectual landscape of a transformative AI paradigm"
+    ]
+  },
+  {
+    "question": "When was 'AI-Enabled Force and Torque Control for Human Robot Interaction' published?",
+    "answer": "2028-06-15",
+    "retrieved_doc_ids": [
+      "10.26634/javr.4.1.1115",
+      "10.26634/javr.4.1.1477",
+      "10.5267/j.ijdns.2026.24",
+      "10.26634/javr.4.1.11309"
+    ],
+    "retrieved_titles": [
+      "AI-Enabled Force and Torque Control for Human Robot Interaction",
+      "Mind Reader Robot: an Arduino-Based Game",
+      "A scientometric study of retrieval-augmented generation research: Mapping the intellectual landscape of a transformative AI paradigm",
+      "ICARECS-2026 - VR NEURAL CLASSROOM"
+    ]
+  }
+]
