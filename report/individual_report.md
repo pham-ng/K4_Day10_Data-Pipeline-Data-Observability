@@ -77,12 +77,23 @@ uv run python script/run_corruption_flow.py
 
 ## 5. Một quyết định kỹ thuật quan trọng
 
-- **Bối cảnh:** Lựa chọn giữa việc gọi trực tiếp Live API để phục hồi dữ liệu hay phục hồi từ Raw JSON Snapshot cục bộ.
+### Quyết định 1: Áp dụng kịch bản Gây lỗi Đa tầng / Tổng hợp (Compound Corruption) thay vì Gây lỗi đơn lẻ
+- **Bối cảnh:** Lựa chọn phương pháp phá hoại dữ liệu để đo lường mức độ ảnh hưởng đến RAG Agent.
+- **Các phương án đã cân nhắc:** 
+  1. *Gây lỗi đơn lẻ (Single Field Injection)*: Chỉ xóa tóm tắt hoặc chỉ xóa bài báo trên các dòng riêng biệt.
+  2. *Gây lỗi đa tầng tổng hợp (Compound Corruption)*: Phối hợp đồng thời nhiều kịch bản lỗi trên cùng các dòng dữ liệu (vừa xóa 6 bài báo mới nhất, vừa làm rỗng/chèn nhiễu HTML 35% tóm tắt, vừa cắt tiêu đề 10 ký tự và lùi ngày xuất bản).
+- **Phương án đã chọn:** Phương án 2 (Compound Corruption).
+- **Lý do:** Mô phỏng chính xác các sự cố phức hợp trong thực tế vận hành Data Pipeline khi nhiều khâu bị lỗi cùng lúc.
+- **Bằng chứng quyết định phù hợp:** Chỉ số RAG sụt giảm rõ rệt và sâu hơn nhiều so với lỗi đơn lẻ: `retrieval_hit_rate` giảm 31.7% (từ 1.0000 rớt xuống **0.6833**) và `mean_token_f1` giảm rớt nặng nề 46.6% (từ 0.9554 rớt thẳng xuống **0.4891** - rớt sâu dưới mốc 0.50), làm nổi bật vai trò của Data Observability & Data Repair.
+
+### Quyết định 2: Tái dựng dữ liệu khôi phục (Data Repair) từ Raw JSON Snapshot cục bộ
+- **Bối cảnh:** Lựa chọn nguồn dữ liệu để phục hồi ở bước Data Repair.
 - **Các phương án đã cân nhắc:** 
   1. Gọi lại Crossref Live REST API khi chạy bước Repair.
   2. Nạp dữ liệu từ tệp Snapshot thô `data/raw/crossref_records.json` đã lưu tại Checkpoint C1.
 - **Phương án đã chọn:** Phương án 2 (Tái dựng từ Raw JSON Snapshot cục bộ).
 - **Lý do:** Đảm bảo tính nhất quán (Immutable Snapshot), khả năng tái lập thử nghiệm (Reproducibility) và giúp pipeline chạy tức thì mà không lo bị lỗi mạng hay vướng API Rate Limit.
+- **Bằng chứng quyết định phù hợp:** Quá trình Repair đưa 100% các chỉ số RAG (`hit_rate` = 1.0000, `token_f1` = 0.9554) và Data Quality Check trở lại mốc Baseline tuyệt đối.
 
 ## 6. Một lỗi hoặc blocker đã xử lý
 
