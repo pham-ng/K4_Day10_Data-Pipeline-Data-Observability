@@ -30,7 +30,7 @@
 
 | Hoạt động                         | Thành viên/module được hỗ trợ | Kết quả                    |
 | ------------------------------------ | ------------------------------------ | ---------------------------- |
-| Tích hợp & Đóng gói CLI | Toàn bộ dự án | `script/run_phase1.py` và `script/run_corruption_flow.py` chạy mượt mượt 100% |
+| Tích hợp & Đóng gói CLI | Toàn bộ dự án | `script/run_phase1.py` và `script/run_corruption_flow.py` chạy thông suốt và mượt mà 100% |
 
 ## 3. Kết quả theo vai trò
 
